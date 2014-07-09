@@ -1,9 +1,10 @@
-class deploy-web-app{
-  class {'deploy-web-app::clean-webapps': } ->
-  class {'deploy-web-app::download-last-artifact': } ->
-  class {'deploy-web-app::stop-tomcat7': } ->
-  class {'deploy-web-app::deploy-app': } ->
-  class {'deploy-web-app::start-tomcat7': } ->
-  class {'deploy-web-app::clean-tmp': } ->
-Class['deploy-web-app']
+class deploy-petclinic{
+  class {'deploy-petclinic::stop-tomcat7': } ->
+  class {'deploy-petclinic::clean-webapps': } ->
+  class {'deploy-petclinic::download-petclinic-war-file': } ->
+  class {'deploy-petclinic::stop-tomcat7': } ->
+  class {'deploy-petclinic::deploy-petclinic-war-file': } ->
+  class {'deploy-petclinic::start-tomcat7': } ->
+  class {'deploy-petclinic::clean-tmp': } ->
+Class['deploy-petclinic']
 }
