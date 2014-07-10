@@ -1,0 +1,1 @@
+class { 'deploy-petclinic': }
